@@ -1,3 +1,10 @@
 @charset "UTF-8";
 /* CSS Document */
 
+img {
+	width: 75px;
+}
+
+.img-circle {
+	background: #06F;
+}
