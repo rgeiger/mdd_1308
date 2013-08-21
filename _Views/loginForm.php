@@ -1,0 +1,8 @@
+
+	<form action="?action=checklogin" method="post">
+		<input type="text" name="un" placeholder="User Name" />
+		<br>
+		<input type="text" name="pass" placeholder="Password" />
+		<br>
+		<input type="Submit" value="Login" />
+	</form>
