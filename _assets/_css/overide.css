@@ -2,9 +2,31 @@
 /* CSS Document */
 
 img {
-	width: 75px;
+	width: 30px;
+	margin-right: 10px;
+	margin-top: 10px;
 }
 
 .img-circle {
 	background: #06F;
+}
+
+.formBG {
+	background-image:url(../_images/formBG.jpeg)	
+}
+
+.lightBlue {
+	color: #06F;
+}
+
+.jumbotron {
+	background-image:url(../_images/formBG.jpeg)	
+}
+
+.jumbotron h1 {
+	color: white;	
+}
+
+.jumbotron p {
+	color: #CCC;	
 }
