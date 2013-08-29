@@ -1,7 +1,6 @@
 <?php
-//include "db_connection.php";
 
-if(!class_exists('DB')){ include '_Controllers/db_connection.php'; }
+if(!class_exists('DB')){ include '_Controllers/db_connectionLocal.php'; }
 
 if(!class_exists('queryModel')){
         
@@ -19,9 +18,9 @@ if(!class_exists('queryModel')){
 		return $st->fetchAll();
 	}
 	
-	public function getOne($id=0){
-		
-		$sql = "select * from profile where id = :id";
+	public function getOne(){
+		$id = 0;
+		$sql = "select * from profile where id=:id";
 		$st = $this->db->prepare($sql);
 		$st->execute(array(":id"=>$id));
 		
@@ -60,8 +59,11 @@ if(!class_exists('queryModel')){
                     VALUES (:email,:phone,:address,:age)";
             
             $st = $this->db->prepare($sql);
-            $st->execute(array(":email"=>$email,":phone"=>$phone,":address"=>$address,":age"=>$age));
-            
+            $st->execute(array(
+                ":email"=>$email,
+                ":phone"=>$phone,
+                ":address"=>$address,
+                ":age"=>$age));            
         }
         public function delete($id=0){
             
@@ -73,7 +75,25 @@ if(!class_exists('queryModel')){
             $st = $this->db->prepare($sql);
             $st->execute(array(":id"=>$id));
         }
-}
+        public function getBlog(){
+		
+		$sql = "select * from posts";
+		$st = $this->db->prepare($sql);
+		$st->execute();
+		
+		return $st->fetchAll();
+	}
+        public function getDetails(){
+            $id = $_GET["id"];
+		
+		$sql = "select * from profile where id = :id";
+		$st = $this->db->prepare($sql);
+		$st->execute(array("id"=>$id));		
+                
+		return $st->fetchAll();
+	}
+        
+    }
 }
 	
 	
