@@ -23,8 +23,6 @@
 	$query = new queryModel();
 		$result = $query->getAll();
 		$view->getView("_Views/links.php", $result);
-	
-
 ?>
                 
     	</div><!--closes user name list cont -->
@@ -45,7 +43,9 @@
 	if($_GET["action"]=="details") {
 		
 		$result = $query->getOne($_GET["id"]);
-		$view->getView("_Views/details.php", $result);		
+		$view->getView("_Views/details.php", $result);
+                
+                
 	}
         if($_GET["action"]=="update") {
             $result = $query->getOne($_GET["id"]);
@@ -67,15 +67,11 @@
             $query->delete($_GET["id"]);
             $results = $query->getAll();
         }
-        
 }else{
 	echo "Please Select A Users Details, update user, or delete user from the menu.";
         echo "<br>";
         echo '<h3 class="btn btn-success"><a href=?action=addUser style=color:white;>Click here to add a user.</a></h3>';
-        
 }
-				
-			
 ?>
         	
     </div>
