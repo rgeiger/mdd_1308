@@ -1,9 +1,7 @@
 <?php
 class viewModel {
-    
 	
 	public function getView($pagename="", $data=array()){
-            
 		include $pagename;
 	}
 	public function showHeader($pageTitle= ''){
@@ -12,16 +10,13 @@ class viewModel {
 	public function showFooter(){
 		include "_Views/footer.php";
 	}
-	public function showDetails(){
+	public function showDetails($details){
 		include "_Views/details.php";
 	}
-        public function showUserDetails(){
-		include "_Views/userDetails.php";
+	public function showLinks(){
+		include "_Views/links.php";
 	}
-	public function showUsers(){
-		include "_Views/users.php";
-	}
-    public function showAddPage(){
+        public function showAddPage(){
 		include "_Views/addPage.htm";
 	}
 	public function showMain(){
@@ -34,16 +29,10 @@ class viewModel {
 		include "_Views/userNav.php";	
 	}
 	public function showNav(){
-		include "_Views/nav.php";	
+		include "_Views/Nav.php";	
 	}
 	public function showSignUpForm(){
 		include "_Views/signUpForm.php";	
-	}
-        public function showBlog(){
-		include "_Views/blogPost.php";	
-	}
-        public function showViewCreate(){
-		include "_Views/create.view.php";	
 	}
 }
 ?>
